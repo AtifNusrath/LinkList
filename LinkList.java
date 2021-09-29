@@ -21,13 +21,30 @@ public class LinkList<T> {
         }
     }
 
-    public static void main(String[] args) {
-        LinkList<Integer> linkedLst = new LinkList<>();
-        linkedLst.add(56);
-        linkedLst.add(30);
-        linkedLst.add(70);
-        //linkedLst.show();
+    public void insertAt(int index, T data) {
+        Node<T> new_node = new Node<T>();
+        new_node.data = data;
+        new_node.next = null;
+
+        if (index == 0) {
+            insertAtStart(data);
+        } else {
+            Node<T> n = head;
+            for (int i = 0; i < index - 1; i++) {
+                n = n.next;
+            }
+            new_node.next = n.next;
+            n.next = new_node;
+        }
     }
+    public void insertAtStart(T data) {
+        Node<T> new_node = new Node<T>();
+        new_node.data = data;
+        new_node.next = null;
+        new_node.next = head;
+        head = new_node;
+    }
+
     public void show() {
         Node<T> n = head;
         while (n.next != null) {
@@ -36,4 +53,13 @@ public class LinkList<T> {
         }
         System.out.println(n.data);
     }
+    public static void main(String[] args) {
+        LinkList<Integer> linkedLst = new LinkList<>();
+        linkedLst.add(56);
+        linkedLst.add(70);
+        linkedLst.show();
+        linkedLst.insertAt(1,30);
+        linkedLst.show();
+    }
+
 }
