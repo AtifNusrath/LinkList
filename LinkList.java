@@ -21,13 +21,6 @@ public class LinkList<T> {
         }
     }
 
-    public static void main(String[] args) {
-        LinkList<Integer> linkedLst = new LinkList<>();
-        linkedLst.add(56);
-        linkedLst.add(30);
-        linkedLst.add(70);
-        //linkedLst.show();
-    }
     public void show() {
         Node<T> n = head;
         while (n.next != null) {
@@ -36,4 +29,13 @@ public class LinkList<T> {
         }
         System.out.println(n.data);
     }
+
+    public static void main(String[] args) {
+        LinkList<Integer> linkedLst = new LinkList<>();
+        linkedLst.add(56);
+        linkedLst.add(30);
+        linkedLst.add(70);
+        linkedLst.show();
+    }
+
 }
