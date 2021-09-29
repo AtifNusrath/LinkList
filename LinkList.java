@@ -112,6 +112,16 @@ public class LinkList<T> {
             n1 = null;
         }
     }
+    public int size()
+    {
+        Node n = head;
+        int counter =1;
+        while(n.next!= null) {
+            counter++;
+            n = n.next;
+        }
+        return counter;
+    }
 
     public static void main(String[] args) {
         LinkList<Integer> linkedLst = new LinkList<>();
@@ -128,6 +138,8 @@ public class LinkList<T> {
         linkedLst.deleteAt(2);
         System.out.println("\nLinked List after deletion: ");
         linkedLst.show();
+        System.out.println("Size of linked list: " +linkedLst.size());
+
 
     }
 }
