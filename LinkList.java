@@ -26,14 +26,7 @@ public class LinkList<T> {
         linkedLst.add(56);
         linkedLst.add(30);
         linkedLst.add(70);
-        //linkedLst.show();
+        
     }
-    public void show() {
-        Node<T> n = head;
-        while (n.next != null) {
-            System.out.print(n.data+"->");
-            n = n.next;
-        }
-        System.out.println(n.data);
-    }
+   
 }
